@@ -1,10 +1,11 @@
 import MyButton from "components/UI/button/MyButton";
-import React from "react";
+import React, { useEffect } from "react";
 import s from "./ContactsList.module.css";
 import { useFetchContactsQuery, useDeleteContactMutation } from "../../redux";
 import { useSelector } from "react-redux";
 
 const ContactsList = () => {
+
   const { data = [], isLoading } = useFetchContactsQuery();
 
   const [deleteContact] = useDeleteContactMutation();
@@ -45,7 +46,9 @@ const ContactsList = () => {
                 <td style={{ textAlign: "center" }}>{name}</td>
                 <td style={{ textAlign: "center" }}>{phone}</td>
                 <td style={{ textAlign: "center" }}>
-                  <MyButton onClick={() => deleteContact(id)}>Delete contact</MyButton>
+                  <MyButton onClick={() => deleteContact(id)}>
+                    Delete contact
+                  </MyButton>
                 </td>
               </tr>
             ))}
