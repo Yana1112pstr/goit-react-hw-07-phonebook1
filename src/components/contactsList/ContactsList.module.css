@@ -1,0 +1,9 @@
+.table {
+    /* margin: 50px; */
+    border: 1px solid teal;
+    width: 100%;
+}
+
+.thead {
+    background-color: teal;
+}
